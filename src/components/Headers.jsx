@@ -1,8 +1,17 @@
 import { useState } from "react";
 
 const Headers = ({setChecked, notifications}) => {
-    let countNotif = 3;
+    let countNotif = 7;
     const [count, setCount] = useState(countNotif);
+
+    const checkCount = () => {
+        notifications.forEach(notification => {
+            if(!notification.dataChecked){
+                countNotif--;
+            }else{return}
+        })
+    }
+    checkCount();
 
     const resetAll = () => {
         notifications.forEach(notification => {

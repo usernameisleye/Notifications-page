@@ -8,8 +8,6 @@ const Notifications = ({notifications, setChecked}) => {
                 notification.dataChecked = 'bg-Very-light-grayish-blue';
                 setChecked(notification.dataChecked);
             }
-            else if(notification.id > 4){
-            }
         });
     }, [notifications])
 
@@ -22,16 +20,6 @@ const Notifications = ({notifications, setChecked}) => {
             }
         })
     }
-    // const checkContent = (e) => {
-    //     notifications.forEach(notification => {
-    //         console.log('hi');
-    //         if(notification.message === ''){
-    //             console.log(notification.name, 'hi');
-    //             e.parentElement.remove();
-    //         }
-    //     });
-    // }
-
 
     return ( 
         <>
@@ -54,9 +42,10 @@ const Notifications = ({notifications, setChecked}) => {
                                     <img className="w-12 ml-auto" src={picture} alt="" />
                                 </div>
 
-                                <div className="">
-                                    <p className="opacity-70 text-sm">{message}</p>
-                                </div>
+                                {message ?(
+                                    <div className={`border-solid border-Grayish-blue border rounded-md p-4 my-2 ${notification.dataChecked}`}>
+                                        <p className="opacity-70 text-sm">{message}</p>
+                                    </div>) : ( <div className=""></div> ) }
                             </div>      
                         </div>
                     </div>
@@ -65,6 +54,5 @@ const Notifications = ({notifications, setChecked}) => {
      );
      
     }
-    
 export default Notifications;
 
