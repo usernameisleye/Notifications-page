@@ -1,14 +1,18 @@
 import { useState } from "react";
 
 const Headers = ({setChecked, notifications}) => {
-    let countNotif = 7;
+    let countNotif = 5;
     const [count, setCount] = useState(countNotif);
 
-    const checkCount = () => {
+    const checkCount = (e) => {
         notifications.forEach(notification => {
             if(!notification.dataChecked){
                 countNotif--;
             }else{return}
+
+            if(countNotif === 0){
+                // console.log(countNotif);
+            }
         })
     }
     checkCount();

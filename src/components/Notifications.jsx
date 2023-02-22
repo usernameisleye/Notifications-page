@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const Notifications = ({notifications, setChecked}) => {
+const Notifications = ({notifications, setChecked, checked}) => {
 
     useEffect(() => {
         notifications.forEach(notification => {
@@ -43,7 +43,7 @@ const Notifications = ({notifications, setChecked}) => {
                                 </div>
 
                                 {message ?(
-                                    <div className={`border-solid border-Grayish-blue border rounded-md p-4 my-2 ${notification.dataChecked}`}>
+                                    <div className={`border-solid border-Grayish-blue border rounded-md p-4 my-2 ${dataChecked} ${name}`}>
                                         <p className="opacity-70 text-sm">{message}</p>
                                     </div>) : ( <div className=""></div> ) }
                             </div>      
